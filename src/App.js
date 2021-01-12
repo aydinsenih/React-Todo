@@ -3,18 +3,7 @@ import ReactDOM from "react-dom";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 
-const list = [
-  {
-    task: "Organize Garage",
-    id: 1528817077286,
-    completed: false,
-  },
-  {
-    task: "Bake Cookies",
-    id: 1528817084358,
-    completed: false,
-  },
-];
+const list = [];
 class App extends React.Component {
   constructor() {
     super();
@@ -52,7 +41,7 @@ class App extends React.Component {
 
   handleItemCompleted = () => {
     const newTodo = this.state.todo.filter((item) => {
-      return !item.completed;
+      return item.completed === false;
     });
     this.setState({
       todo: newTodo,
